@@ -217,64 +217,126 @@ export default function ProkipSalesPage() {
                   secure your business 100%
                 </p>
               </div>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {[
-                  { label: "First Name", type: "text", key: "firstName", placeholder: "Your first name" },
-                  { label: "Email", type: "email", key: "email", placeholder: "your@email.com" },
-                  { label: "Phone Number", type: "tel", key: "phone", placeholder: "+234..." },
-                ].map((field) => (
-                  <div key={field.key}>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-                      {field.label}
-                    </label>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {/* First Name */}
+                <div>
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-gray-500 mb-2">
+                    First Name
+                  </label>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+                    </div>
                     <input
-                      type={field.type}
+                      type="text"
                       required
-                      value={form[field.key as keyof typeof form]}
-                      onChange={(e) => setForm((p) => ({ ...p, [field.key]: e.target.value }))}
-                      className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm text-gray-900 focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
-                      placeholder={field.placeholder}
+                      value={form.firstName}
+                      onChange={(e) => setForm((p) => ({ ...p, firstName: e.target.value }))}
+                      className="w-full rounded-2xl border-0 bg-[#f5f7fa] pl-12 pr-4 py-4 text-base text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-[#011635]/20 transition-all"
+                      placeholder="Your first name"
                     />
                   </div>
-                ))}
+                </div>
+
+                {/* Email */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-gray-500 mb-2">
+                    Email Address
+                  </label>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                    </div>
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                      className="w-full rounded-2xl border-0 bg-[#f5f7fa] pl-12 pr-4 py-4 text-base text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-[#011635]/20 transition-all"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-gray-500 mb-2">
+                    Phone Number
+                  </label>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
+                    </div>
+                    <input
+                      type="tel"
+                      required
+                      value={form.phone}
+                      onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))}
+                      className="w-full rounded-2xl border-0 bg-[#f5f7fa] pl-12 pr-4 py-4 text-base text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-[#011635]/20 transition-all"
+                      placeholder="+234..."
+                    />
+                  </div>
+                </div>
+
+                {/* Own business */}
+                <div>
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-gray-500 mb-2">
                     Do you own a business?
                   </label>
-                  <select
-                    required
-                    value={form.ownsBusiness}
-                    onChange={(e) => setForm((p) => ({ ...p, ownsBusiness: e.target.value }))}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm text-gray-900 focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
-                  >
-                    <option value="">- Select -</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                  </select>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0" /></svg>
+                    </div>
+                    <select
+                      required
+                      value={form.ownsBusiness}
+                      onChange={(e) => setForm((p) => ({ ...p, ownsBusiness: e.target.value }))}
+                      className="w-full appearance-none rounded-2xl border-0 bg-[#f5f7fa] pl-12 pr-10 py-4 text-base text-gray-900 outline-none focus:ring-2 focus:ring-[#011635]/20 transition-all"
+                    >
+                      <option value="">- Select -</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                  </div>
                 </div>
+
+                {/* Employees */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.15em] text-gray-500 mb-2">
                     How many employees do you have?
                   </label>
-                  <select
-                    required
-                    value={form.employees}
-                    onChange={(e) => setForm((p) => ({ ...p, employees: e.target.value }))}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm text-gray-900 focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
-                  >
-                    <option value="">- Select -</option>
-                    <option value="None">None</option>
-                    <option value="1-5">1-5</option>
-                    <option value="6-20">6-20</option>
-                    <option value="21-50">21-50</option>
-                    <option value="51-100">51-100</option>
-                    <option value="100+">100+</option>
-                  </select>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
+                    </div>
+                    <select
+                      required
+                      value={form.employees}
+                      onChange={(e) => setForm((p) => ({ ...p, employees: e.target.value }))}
+                      className="w-full appearance-none rounded-2xl border-0 bg-[#f5f7fa] pl-12 pr-10 py-4 text-base text-gray-900 outline-none focus:ring-2 focus:ring-[#011635]/20 transition-all"
+                    >
+                      <option value="">- Select -</option>
+                      <option value="None">None</option>
+                      <option value="1-5">1-5</option>
+                      <option value="6-20">6-20</option>
+                      <option value="21-50">21-50</option>
+                      <option value="51-100">51-100</option>
+                      <option value="100+">100+</option>
+                    </select>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                  </div>
                 </div>
+
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full rounded-xl bg-gradient-to-r from-[#011635] to-[#0a3270] py-4 text-lg font-bold text-white hover:from-[#072654] hover:to-[#0d3d85] transition-all disabled:opacity-60 flex items-center justify-center gap-2 shadow-lg shadow-[#011635]/25 mt-2"
+                  className="w-full rounded-2xl bg-[#1e293b] py-4.5 text-base font-semibold text-white hover:bg-[#334155] transition-all disabled:opacity-60 flex items-center justify-center gap-2 mt-3"
+                  style={{ paddingTop: "18px", paddingBottom: "18px" }}
                 >
                   {submitting ? (
                     <><Loader2 className="h-5 w-5 animate-spin" /> Processing...</>
