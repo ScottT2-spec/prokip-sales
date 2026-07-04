@@ -131,7 +131,7 @@ export default function ProkipSalesPage() {
             </p>
             <a
               href="tel:+2349019183882"
-              className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 px-10 py-5 text-xl font-bold text-[#011635] hover:from-amber-400 hover:to-amber-500 transition-all shadow-xl shadow-amber-500/25 hover:-translate-y-1"
+              className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 px-10 py-5 text-lg font-bold text-[#011635] hover:from-amber-400 hover:to-amber-500 transition-all shadow-xl shadow-amber-500/25 hover:-translate-y-1"
             >
               <Phone className="h-6 w-6" />
               +2349019183882
@@ -423,7 +423,7 @@ export default function ProkipSalesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight"
+            className="text-xl sm:text-2xl md:text-4xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight"
           >
             Here&apos;s How to{" "}
             <span className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent">
@@ -464,7 +464,7 @@ export default function ProkipSalesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg sm:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+            className="text-base sm:text-lg text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
           >
             Now you can grow your business successfully, have more freedom and
             enjoy the life you really deserve!
@@ -477,7 +477,7 @@ export default function ProkipSalesPage() {
           >
             <button
               onClick={() => setShowForm(true)}
-              className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 px-12 py-6 text-lg sm:text-xl font-bold text-[#011635] hover:from-amber-400 hover:to-amber-500 transition-all shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-1 active:translate-y-0"
+              className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 px-12 py-6 text-base sm:text-lg font-bold text-[#011635] hover:from-amber-400 hover:to-amber-500 transition-all shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-1 active:translate-y-0"
             >
               I&apos;m Ready to Get Rid of Theft In My Business
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -498,12 +498,12 @@ export default function ProkipSalesPage() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="space-y-7 text-gray-800" style={{ fontSize: "1rem", lineHeight: "1.8" }}>
-            <Reveal><p className="text-xl font-bold text-[#011635]">Dear Business Owner,</p></Reveal>
+          <div className="space-y-7 text-gray-800" style={{ fontSize: "0.9rem", lineHeight: "1.75" }}>
+            <Reveal><p className="text-lg font-bold text-[#011635]">Dear Business Owner,</p></Reveal>
 
             <Reveal delay={0.05}><p>If you&apos;d like to protect your business from going bankrupt, then it&apos;s important you read this message without hesitation…</p></Reveal>
 
-            <Reveal delay={0.05}><p className="font-bold text-[#011635] text-lg">Here&apos;s why:</p></Reveal>
+            <Reveal delay={0.05}><p className="font-bold text-[#011635] text-base">Here&apos;s why:</p></Reveal>
 
             <Reveal><p>As you already know…</p></Reveal>
             <Reveal><p>Nowadays, lots of businesses are shutting down.</p></Reveal>
@@ -516,7 +516,7 @@ export default function ProkipSalesPage() {
               <div className="my-12 relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-red-500/20 via-orange-500/20 to-red-500/20 rounded-3xl blur-lg" />
                 <div className="relative rounded-3xl border-2 border-red-200 bg-gradient-to-br from-red-50 via-orange-50 to-red-50 p-10 text-center">
-                  <p className="text-xl sm:text-2xl font-extrabold text-red-700 leading-tight">
+                  <p className="text-lg sm:text-xl font-extrabold text-red-700 leading-tight">
                     Unknown Employees Theft &amp; Mismanagement of Business Funds
                   </p>
                 </div>
@@ -532,7 +532,7 @@ export default function ProkipSalesPage() {
               <div className="my-10 relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#011635]/30 to-[#0a3270]/30 rounded-3xl blur-lg" />
                 <div className="relative rounded-3xl bg-gradient-to-br from-[#011635] to-[#0a3270] p-8 sm:p-10 text-center">
-                  <p className="text-xl sm:text-2xl font-extrabold text-amber-400 mb-3">
+                  <p className="text-lg sm:text-xl font-extrabold text-amber-400 mb-3">
                     That&apos;s over N300,000 GONE at the end of the year.
                   </p>
                   <p className="text-white/60 italic text-lg">
@@ -547,13 +547,13 @@ export default function ProkipSalesPage() {
             <Reveal><p>And if you think CCTV cameras will save your business, then you&apos;re joking</p></Reveal>
             <Reveal><p>You see…</p></Reveal>
             <Reveal><p>Reports have shown that some employees go as far as adjusting stock inventory, manipulating sales transactions and expenses so they don&apos;t get caught.</p></Reveal>
-            <Reveal><p className="font-bold text-[#011635] text-lg">Truth be told:</p></Reveal>
+            <Reveal><p className="font-bold text-[#011635] text-base">Truth be told:</p></Reveal>
             <Reveal><p>Your employees will always want to exploit your business...</p></Reveal>
             <Reveal><p>Not because they hate you</p></Reveal>
             <Reveal><p>But because they will always need extra money.</p></Reveal>
             <Reveal><p>Their salary will never be enough even if you think you are paying them well enough.</p></Reveal>
             <Reveal><p className="italic text-gray-400 text-lg">(Remember, human wants are unlimited)</p></Reveal>
-            <Reveal><p className="font-bold text-[#011635] text-lg">But don&apos;t worry…</p></Reveal>
+            <Reveal><p className="font-bold text-[#011635] text-base">But don&apos;t worry…</p></Reveal>
           </div>
         </div>
       </section>
@@ -573,19 +573,19 @@ export default function ProkipSalesPage() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#011635] mb-5 tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-[#011635] mb-5 tracking-tight">
               Now you can have 100% control over your business.
             </h2>
           </Reveal>
 
           <Reveal delay={0.15}>
-            <p className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent mb-5">
+            <p className="text-lg sm:text-xl font-bold bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent mb-5">
               Prokip is all you need to run a successful business
             </p>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-base text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
               Prokip is a powerful accounting &amp; business management software
               that helps you{" "}
               <strong className="text-[#011635]">monitor, automate and grow your business faster with ease</strong>
@@ -593,7 +593,7 @@ export default function ProkipSalesPage() {
           </Reveal>
 
           <Reveal delay={0.25}>
-            <p className="text-center text-lg font-bold text-[#011635] mb-10">
+            <p className="text-center text-base font-bold text-[#011635] mb-10">
               With Prokip, ALL the loopholes in your business will be fixed:
             </p>
           </Reveal>
@@ -607,7 +607,7 @@ export default function ProkipSalesPage() {
                     <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#011635] to-[#0a3270] shadow-lg shadow-[#011635]/20 group-hover:shadow-[#011635]/40 transition-shadow">
                       <Icon className="h-7 w-7 text-amber-400" />
                     </div>
-                    <p className="text-base text-gray-800 pt-2.5 leading-relaxed">{feature.title}</p>
+                    <p className="text-sm text-gray-800 pt-2.5 leading-relaxed">{feature.title}</p>
                   </div>
                 </Reveal>
               );
@@ -622,7 +622,7 @@ export default function ProkipSalesPage() {
       <section className="py-20 sm:py-32 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#011635] mb-14 tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-[#011635] mb-14 tracking-tight">
               Here&apos;s What Other Business Owners Like You Are Saying About Prokip
             </h2>
           </Reveal>
@@ -672,7 +672,7 @@ export default function ProkipSalesPage() {
                     <Zap className="h-4 w-4" />
                     The best part?
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold mb-4 leading-tight tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-extrabold mb-4 leading-tight tracking-tight">
                     Prokip is built with a hybrid feature that allows you to work{" "}
                     <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
                       offline and online.
@@ -699,12 +699,12 @@ export default function ProkipSalesPage() {
         
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative">
           <Reveal>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-8 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-8 tracking-tight leading-tight">
               Ready to Secure Your Business?
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-base sm:text-lg text-white/70 mb-12 max-w-xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-white/70 mb-12 max-w-xl mx-auto leading-relaxed">
               Click the button below and fill in your details. You will get a FREE
               call from one of our representatives who will help secure your
               business with Prokip…regardless of your location
@@ -713,7 +713,7 @@ export default function ProkipSalesPage() {
           <Reveal delay={0.2}>
             <button
               onClick={() => setShowForm(true)}
-              className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 px-14 py-7 text-xl font-bold text-[#011635] hover:from-amber-400 hover:to-amber-500 transition-all shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-1 active:translate-y-0"
+              className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 px-14 py-7 text-lg font-bold text-[#011635] hover:from-amber-400 hover:to-amber-500 transition-all shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-1 active:translate-y-0"
             >
               Click Here Now
               <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
