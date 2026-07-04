@@ -232,7 +232,7 @@ export default function ProkipSalesPage() {
                       required
                       value={form[field.key as keyof typeof form]}
                       onChange={(e) => setForm((p) => ({ ...p, [field.key]: e.target.value }))}
-                      className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
+                      className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm text-gray-900 focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
                       placeholder={field.placeholder}
                     />
                   </div>
@@ -245,7 +245,7 @@ export default function ProkipSalesPage() {
                     required
                     value={form.ownsBusiness}
                     onChange={(e) => setForm((p) => ({ ...p, ownsBusiness: e.target.value }))}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
+                    className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm text-gray-900 focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
                   >
                     <option value="">- Select -</option>
                     <option value="Yes">Yes</option>
@@ -260,7 +260,7 @@ export default function ProkipSalesPage() {
                     required
                     value={form.employees}
                     onChange={(e) => setForm((p) => ({ ...p, employees: e.target.value }))}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
+                    className="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-sm text-gray-900 focus:border-[#011635] focus:ring-2 focus:ring-[#011635]/20 outline-none transition-all bg-gray-50 focus:bg-white"
                   >
                     <option value="">- Select -</option>
                     <option value="None">None</option>
