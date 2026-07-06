@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prokip Sales – All in One Business App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ───────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #1a1a2e;
+      background: #f8f9fc;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Utility ────────────────────────────────────── */
+    .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+    .text-center { text-align: center; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+    /* ── Hero ───────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #011635 0%, #072654 60%, #0a3270 100%);
+      color: #fff;
+      padding: 64px 24px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 64px;
+      background: #f8f9fc;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,182,0,.15);
+      border: 1px solid rgba(255,182,0,.3);
+      color: #ffb600;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 40px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 800;
+      line-height: 1.25;
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+    .hero h1 span { color: #ffb600; }
+
+    /* ── Video Embed ────────────────────────────────── */
+    .video-wrap {
+      max-width: 720px;
+      margin: 0 auto 36px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      position: relative;
+      z-index: 1;
+    }
+    .video-wrap .ratio {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 20px);
+      opacity: .88;
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+    .btn {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 18px 40px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      position: relative;
+      z-index: 1;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary {
+      background: linear-gradient(135deg, #ffb600, #ff9500);
+      color: #011635;
+      box-shadow: 0 8px 30px rgba(255,182,0,.35);
+    }
+    .btn-primary:hover { box-shadow: 0 12px 40px rgba(255,182,0,.45); }
+    .btn-dark {
+      background: #011635;
+      color: #fff;
+      box-shadow: 0 8px 30px rgba(1,22,53,.3);
+    }
+
+    /* ── Sales Copy Section ─────────────────────────── */
+    .sales-copy {
+      padding: 72px 24px 56px;
+      background: #fff;
+    }
+    .sales-copy p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .sales-copy .highlight-box {
+      background: linear-gradient(135deg, #fef3cd, #fff8e1);
+      border-left: 5px solid #ffb600;
+      padding: 24px 28px;
+      border-radius: 0 12px 12px 0;
+      margin: 32px 0;
+      font-size: 19px;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+    .sales-copy .problem-stat {
+      background: #fdf0f0;
+      border-left: 5px solid #e74c3c;
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+      font-size: 18px;
+    }
+    .sales-copy .problem-stat strong { color: #c0392b; }
+    .section-heading {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 12px;
+      color: #011635;
+    }
+    .section-sub {
+      text-align: center;
+      color: #555;
+      font-size: 17px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    /* ── Features Checklist ─────────────────────────── */
+    .features {
+      padding: 56px 24px 64px;
+      background: #f0f4ff;
+    }
+    .feature-list {
+      list-style: none;
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #fff;
+      padding: 22px 24px;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(7,38,84,.06);
+      font-size: 17px;
+      color: #333;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .feature-list li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(7,38,84,.1);
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #022eb4, #1a6dff);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .check-icon svg { width: 16px; height: 16px; fill: #fff; }
+
+    /* ── Testimonials ───────────────────────────────── */
+    .testimonials {
+      padding: 64px 24px;
+      background: #fff;
+    }
+    .testimonial-video {
+      max-width: 680px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,.1);
+    }
+    .testimonial-video .ratio {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .testimonial-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ── Hybrid Feature ─────────────────────────────── */
+    .hybrid {
+      padding: 56px 24px;
+      background: linear-gradient(135deg, #e8f0fe, #f0f4ff);
+    }
+    .hybrid-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 8px 32px rgba(7,38,84,.08);
+      text-align: center;
+    }
+    .hybrid-card .icon-badge {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #022eb4, #1a6dff);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .hybrid-card .icon-badge svg { width: 32px; height: 32px; fill: #fff; }
+    .hybrid-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #011635;
+      margin-bottom: 12px;
+    }
+    .hybrid-card p { font-size: 17px; color: #555; }
+
+    /* ── CTA / Form Section ─────────────────────────── */
+    .cta-section {
+      padding: 72px 24px 80px;
+      background: linear-gradient(135deg, #011635 0%, #072654 100%);
+      color: #fff;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: clamp(24px, 4.5vw, 36px);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .cta-section h2 span { color: #ffb600; }
+    .cta-section .cta-sub {
+      font-size: 17px;
+      opacity: .85;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+
+    /* ── Form ───────────────────────────────────────── */
+    .form-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      text-align: left;
+      color: #1a1a2e;
+    }
+    .form-card h3 {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: #011635;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+    }
+    .form-group label .req { color: #e74c3c; margin-left: 2px; }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-family: inherit;
+      border: 2px solid #e0e6f0;
+      border-radius: 10px;
+      background: #f8f9fc;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #022eb4;
+      box-shadow: 0 0 0 3px rgba(2,46,180,.12);
+      background: #fff;
+    }
+    .radio-group {
+      display: flex;
+      gap: 16px;
+      margin-top: 4px;
+    }
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px 20px;
+      border: 2px solid #e0e6f0;
+      border-radius: 10px;
+      flex: 1;
+      justify-content: center;
+      transition: border-color .2s, background .2s;
+    }
+    .radio-group label:has(input:checked) {
+      border-color: #022eb4;
+      background: #f0f4ff;
+    }
+    .radio-group input[type="radio"] { accent-color: #022eb4; }
+    .form-submit {
+      width: 100%;
+      padding: 18px;
+      font-size: 17px;
+      font-weight: 700;
+      font-family: inherit;
+      background: linear-gradient(135deg, #011635, #072654);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(1,22,53,.35);
+    }
+
+    /* ── Success Screen ─────────────────────────────── */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .success-screen.active { display: block; }
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      animation: popIn .5s cubic-bezier(.175,.885,.32,1.275);
+    }
+    @keyframes popIn {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+    .success-icon svg { width: 40px; height: 40px; fill: #fff; }
+    .success-screen h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #011635;
+      margin-bottom: 12px;
+    }
+    .success-screen p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .success-screen .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #022eb4;
+      margin-top: 16px;
+      padding: 12px 28px;
+      border: 2px solid #022eb4;
+      border-radius: 12px;
+      transition: background .2s, color .2s;
+    }
+    .success-screen .phone-link:hover {
+      background: #022eb4;
+      color: #fff;
+    }
+
+    .form-wrapper.submitted .form-inner { display: none; }
+    .form-wrapper.submitted .success-screen { display: block; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      background: #0a0f1e;
+      color: rgba(255,255,255,.5);
+      font-size: 14px;
+    }
+    footer strong { color: rgba(255,255,255,.8); }
+
+    /* ── Animations ─────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 56px; }
+      .form-card { padding: 28px 20px; }
+      .radio-group { flex-direction: column; gap: 10px; }
+      .feature-list li { padding: 18px 16px; }
+      .hybrid-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">For Business Owners Only</div>
+      <h1>Here's How to <span>Stop Employee Theft</span>, Mismanagement of Funds and Loss in Your Business</h1>
+
+      <div class="video-wrap fade-up">
+        <div class="ratio">
+          <iframe
+            src="https://www.youtube.com/embed/xwkcPcL7DIE?rel=0&modestbranding=1"
+            title="Prokip Testimonial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      <p class="hero-sub">Now you can grow your business successfully, have more freedom and enjoy the life you really deserve!</p>
+      <a href="#secure-form" class="btn btn-primary">I'm Ready to Get Rid of Theft in My Business</a>
+    </div>
+  </section>
+
+  <!-- ═══ SALES COPY ═══ -->
+  <section class="sales-copy">
+    <div class="container">
+      <p>Dear Business Owner,</p>
+      <p>If you'd like to protect your business from going bankrupt, then it's important you read this message without hesitation…</p>
+      <p>As you already know… nowadays, lots of businesses are shutting down. The rate is higher than ever before.</p>
+      <p>And you know why?</p>
+      <p>It's not actually because they are not making enough sales… but because of…</p>
+
+      <div class="highlight-box fade-up">
+        Unknown Employee Theft &amp; Mismanagement of Business Funds
+      </div>
+
+      <p>Most business owners invest a lot of money in their businesses… and they work tirelessly without results because <strong>someone else is eating their profits.</strong></p>
+      <p>Think about it…</p>
+      <p>If your salesboy or salesgirl steals just ₦1,000 daily from your business…</p>
+
+      <div class="problem-stat fade-up">
+        <strong>That's over ₦300,000 GONE at the end of the year.</strong> <em>(That's if it's just ₦1,000 they are exploiting from your business.)</em>
+      </div>
+
+      <p>What if you have more than one employee stealing from your business without you knowing?</p>
+      <p>Well, it's a matter of time before your business shuts down.</p>
+      <p>And if you think CCTV cameras will save your business, then you're joking.</p>
+      <p>Reports have shown that some employees go as far as <strong>adjusting stock inventory, manipulating sales transactions and expenses</strong> so they don't get caught.</p>
+      <p><u>Truth be told:</u></p>
+      <p>Your employees will always want to exploit your business… not because they hate you, but because they will always need extra money. Their salary will never be enough even if you think you are paying them well enough.</p>
+      <p><em>(Remember, human wants are unlimited)</em></p>
+      <p>But don't worry…</p>
+      <p><strong>Now you can have 100% control over your business.</strong></p>
+
+      <div class="highlight-box fade-up" style="border-left-color: #022eb4; background: linear-gradient(135deg, #e8f0fe, #f0f4ff);">
+        <strong>Prokip</strong> is a powerful accounting &amp; business management software that helps you <strong>monitor, automate and grow your business faster with ease.</strong>
+      </div>
+
+      <p style="text-align:center; font-weight: 700; font-size: 20px; color: #011635;">With Prokip, ALL the loopholes in your business will be fixed:</p>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES ═══ -->
+  <section class="features">
+    <div class="container">
+      <ul class="feature-list">
+        <li class="fade-up">
+          <div class="check-icon">
+            <svg viewBox="0 0 32 32"><path d="M29.333 10.267c0 .4-.133.8-.533 1.2l-14.8 14.8c-.267.267-.667.4-1.067.4s-.933-.133-1.2-.533l-2.4-2.267-6.267-6.267c-.267-.267-.4-.667-.4-1.2s.133-.8.533-1.2l2.4-2.4c.267-.133.667-.4 1.067-.4s.8.133 1.2.533l5.067 5.067 11.2-11.333c.267-.267.667-.533 1.2-.533.4 0 .8.133 1.2.533l2.4 2.4c.267.267.4.667.4 1.2z"/></svg>
+          </div>
+          <span>Automatically store customer records, manage credit sales, send payment invoices and receipts</span>
+        </li>
+        <li class="fade-up">
+          <div class="check-icon">
+            <svg viewBox="0 0 32 32"><path d="M29.333 10.267c0 .4-.133.8-.533 1.2l-14.8 14.8c-.267.267-.667.4-1.067.4s-.933-.133-1.2-.533l-2.4-2.267-6.267-6.267c-.267-.267-.4-.667-.4-1.2s.133-.8.533-1.2l2.4-2.4c.267-.133.667-.4 1.067-.4s.8.133 1.2.533l5.067 5.067 11.2-11.333c.267-.267.667-.533 1.2-.533.4 0 .8.133 1.2.533l2.4 2.4c.267.267.4.667.4 1.2z"/></svg>
+          </div>
+          <span>Know exactly how much is being sold every single minute of the day without spending hours keeping paper records that can easily be manipulated</span>
+        </li>
+        <li class="fade-up">
+          <div class="check-icon">
+            <svg viewBox="0 0 32 32"><path d="M29.333 10.267c0 .4-.133.8-.533 1.2l-14.8 14.8c-.267.267-.667.4-1.067.4s-.933-.133-1.2-.533l-2.4-2.267-6.267-6.267c-.267-.267-.4-.667-.4-1.2s.133-.8.533-1.2l2.4-2.4c.267-.133.667-.4 1.067-.4s.8.133 1.2.533l5.067 5.067 11.2-11.333c.267-.267.667-.533 1.2-.533.4 0 .8.133 1.2.533l2.4 2.4c.267.267.4.667.4 1.2z"/></svg>
+          </div>
+          <span>Know exactly how many stocks of each product you have in your store or warehouse and get alerts when they're about to finish or expire</span>
+        </li>
+        <li class="fade-up">
+          <div class="check-icon">
+            <svg viewBox="0 0 32 32"><path d="M29.333 10.267c0 .4-.133.8-.533 1.2l-14.8 14.8c-.267.267-.667.4-1.067.4s-.933-.133-1.2-.533l-2.4-2.267-6.267-6.267c-.267-.267-.4-.667-.4-1.2s.133-.8.533-1.2l2.4-2.4c.267-.133.667-.4 1.067-.4s.8.133 1.2.533l5.067 5.067 11.2-11.333c.267-.267.667-.533 1.2-.533.4 0 .8.133 1.2.533l2.4 2.4c.267.267.4.667.4 1.2z"/></svg>
+          </div>
+          <span>Track sales and cash flow easily without a mistake</span>
+        </li>
+        <li class="fade-up">
+          <div class="check-icon">
+            <svg viewBox="0 0 32 32"><path d="M29.333 10.267c0 .4-.133.8-.533 1.2l-14.8 14.8c-.267.267-.667.4-1.067.4s-.933-.133-1.2-.533l-2.4-2.267-6.267-6.267c-.267-.267-.4-.667-.4-1.2s.133-.8.533-1.2l2.4-2.4c.267-.133.667-.4 1.067-.4s.8.133 1.2.533l5.067 5.067 11.2-11.333c.267-.267.667-.533 1.2-.533.4 0 .8.133 1.2.533l2.4 2.4c.267.267.4.667.4 1.2z"/></svg>
+          </div>
+          <span>Prevent your employees from stealing your products and money — even in your absence</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-heading fade-up">Here's What Other Business Owners Are Saying About Prokip</h2>
+      <p class="section-sub fade-up">Real stories from real business owners who secured their businesses with Prokip.</p>
+      <div class="testimonial-video fade-up">
+        <div class="ratio">
+          <iframe
+            src="https://www.youtube.com/embed/WXfLnZ-iyYA?rel=0&modestbranding=1"
+            title="What businesses are saying about Prokip"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HYBRID FEATURE ═══ -->
+  <section class="hybrid">
+    <div class="container">
+      <div class="hybrid-card fade-up">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#fff"/></svg>
+        </div>
+        <h3>Works Offline &amp; Online</h3>
+        <p>Prokip is built with a hybrid feature that allows you to work offline and online. So, you can easily operate efficiently whether the network is good or bad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA + FORM ═══ -->
+  <section class="cta-section" id="secure-form">
+    <div class="container">
+      <h2 class="fade-up">Ready to <span>Secure Your Business?</span></h2>
+      <p class="cta-sub fade-up">Fill in your details below. You will get a FREE call from one of our representatives who will help secure your business with Prokip — regardless of your location.</p>
+
+      <div class="form-card fade-up form-wrapper" id="formWrapper">
+        <!-- ─ FORM ─ -->
+        <div class="form-inner">
+          <h3>Enter your details to book a <strong>FREE call</strong> with a Prokip representative and <strong>secure your business 100%</strong></h3>
+
+          <form id="prokipForm" novalidate>
+            <div class="form-group">
+              <label for="firstName">First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="first_name" placeholder="Enter your first name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+            </div>
+
+            <div class="form-group">
+              <label>Do you own a business? <span class="req">*</span></label>
+              <div class="radio-group">
+                <label><input type="radio" name="owns_business" value="yes" required /> Yes</label>
+                <label><input type="radio" name="owns_business" value="no" /> No</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="employees">How many employees do you have? <span class="req">*</span></label>
+              <select id="employees" name="employees" required>
+                <option value="">– Select –</option>
+                <option value="None">None</option>
+                <option value="1-5">1-5</option>
+                <option value="6-20">6-20</option>
+                <option value="21-50">21-50</option>
+                <option value="51-100">51-100</option>
+                <option value="100+">100+</option>
+              </select>
+            </div>
+
+            <button type="submit" class="form-submit">Yes, I'm Ready to Secure My Business</button>
+          </form>
+        </div>
+
+        <!-- ─ SUCCESS ─ -->
+        <div class="success-screen" id="successScreen">
+          <div class="success-icon">
+            <svg viewBox="0 0 32 32"><path d="M29.333 10.267c0 .4-.133.8-.533 1.2l-14.8 14.8c-.267.267-.667.4-1.067.4s-.933-.133-1.2-.533l-2.4-2.267-6.267-6.267c-.267-.267-.4-.667-.4-1.2s.133-.8.533-1.2l2.4-2.4c.267-.133.667-.4 1.067-.4s.8.133 1.2.533l5.067 5.067 11.2-11.333c.267-.267.667-.533 1.2-.533.4 0 .8.133 1.2.533l2.4 2.4c.267.267.4.667.4 1.2z"/></svg>
+          </div>
+          <h3>Thank You!</h3>
+          <p>Your request was received successfully.</p>
+          <p>A Call Agent will call you within <strong>24 hours</strong> to explain more about Prokip and how it can help your business.</p>
+          <p style="margin-top: 20px; font-size: 15px; color: #888;">If you can't wait for the call, reach us directly:</p>
+          <a href="tel:+2349019183882" class="phone-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +234 901 918 3882
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <p>&copy; 2026 <strong>Prokip</strong> — All in One Business App. All rights reserved.</p>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // Scroll-triggered fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Form submission → show success
+    document.getElementById('prokipForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Replace with real submission logic (e.g., fetch to your backend)
+      document.getElementById('formWrapper').classList.add('submitted');
+      document.getElementById('successScreen').classList.add('active');
+      document.getElementById('secure-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</body>
+</html>
